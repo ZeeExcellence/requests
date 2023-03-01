@@ -7,16 +7,16 @@ def get_heroes_list(needed_heroes):
     heroes = response.json()
     stats_dict = {}
     int_points = []
-    for row in heroes:
-        if row['name'] in needed_heroes:
-            int_points.append(row['powerstats']['intelligence'])
-            if row['powerstats']['intelligence'] not in stats_dict:
-                stats_dict.setdefault(row['powerstats']['intelligence'], [row['name']])
+    for pers in heroes:
+        if pers['name'] in needed_heroes:
+            int_points.append(pers['powerstats']['intelligence'])
+            if pers['powerstats']['intelligence'] not in stats_dict:
+                stats_dict.setdefault(pers['powerstats']['intelligence'], [pers['name']])
             else:
-                stats_dict[row['powerstats']['intelligence']].append(row['name'])
+                stats_dict[pers['powerstats']['intelligence']].append(pers['name'])
 
     smart_hero = ''.join(stats_dict[max(int_points)])
-    return print(f'Самый умный герой с интелектом {max(int_points)} - {smart_hero}')
+    return print(f'Самый умный герой {smart_hero}, его интеллект {max(int_points)}')
 
 
 if __name__ == "__main__":
