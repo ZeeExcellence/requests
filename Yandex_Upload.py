@@ -38,6 +38,6 @@ class YandexDisk:
 
 
 if __name__ == '__main__':
-	ya = YandexDisk(token="y0_AgAAAAA3zr2FAADLWwAAAADdYRTJ27waBIkESEmM_j76CebJ_1VrpXo")
+	ya = YandexDisk(some_token)
 	ya.upload_file_to_disk(r"text.txt", filename="text.txt")
 	pprint(ya.get_files_list())
