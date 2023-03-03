@@ -15,7 +15,7 @@ def get_heroes_list(needed_heroes):
             else:
                 stats_dict[pers['powerstats']['intelligence']].append(pers['name'])
 
-    smart_hero = ''.join(stats_dict[max(int_points)])
+    smart_hero = ','.join(stats_dict[max(int_points)])
     return print(f'Самый умный герой {smart_hero}, его интеллект {max(int_points)}')
 
 
